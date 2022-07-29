@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+
+<link rel="icon" type="image/x-icon" href="favicon-16x16.ico">
+
+<link rel="stylesheet" href="https://use.typekit.net/zkk3fsj.css">
+
+<link rel="stylesheet" href="CSS junk.css">
+
+
+
+<style>
+span {
+	visibility: hidden;
+}
+</style>
+
+
+
+<title>Palindrome checker</title>
+
+</head>
+
+
+
+<body style="background-color:lightgray;">
+
+<h1> PALINDROME CHECKER </h1>
+
+
+<textarea id="yourword" input type="text" autofocus></textarea>
+
+<!--
+<div id="pos">
+<button type="button" id="button" onclick = "clickTheButton()">CHECK</button>
+</div>
+-->
+
+<p id="result"></p>
+
+
+
+<script>
+
+document.getElementById("yourword").addEventListener("input", clickTheButton);
+
+function clickTheButton() {
+  var x = document.getElementById("yourword").value;  
+  document.getElementById("result").innerHTML = x;
+  var whole = x 
+  var arrayValues = x.split (""); 
+  var reversed = arrayValues.reverse();
+  var rejoin = reversed.join ("");
+  if (rejoin == whole) {
+    document.getElementById("result").innerHTML = "the word is a palindrome";
+	document.getElementById("result").style.color = "green";
+	}
+  else if (rejoin != whole) {
+    document.getElementById("result").innerHTML = "the word ISN'T a palindrome";
+	document.getElementById("result").style.color = "red";
+	}
+ 
+}
+
+</script> 
+
+
+
+
+<script>
+var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keypress', autosize);
+
+function autosize(e){
+  var el = this;
+  
+  
+  if(this.value.length > 200){
+  console.log('end');
+  return e.preventDefault();
+  }
+  if(textarea.value.split('\n').length > 8 || textarea.value.length > 200)
+	return;
+    //el.style.cssText = 'height:auto; padding:0';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+}
+
+
+</script>
+
+<p id="description">check if the word is a palindrome</p>
+
+
+
+
+<div class="center">
+
+
+
+
+
+
+
+
+
+<footer>
+
+<span>
+::before
+</span>
+
+
+<p style="text-decoration:none">Copyright © 2022 Ashley Hayes. All Rights Reserved.</p>
+
+<span>
+::after
+</span>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>
